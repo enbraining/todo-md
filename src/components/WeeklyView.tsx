@@ -89,14 +89,9 @@ export default function WeeklyView({ onUpdate }: WeeklyViewProps) {
             날짜 미지정 ({unscheduledTodos.length})
           </h4>
           <div className="space-y-2">
-            {unscheduledTodos.slice(0, 10).map((todo) => (
+            {unscheduledTodos.map((todo) => (
               <TodoItem key={todo.id} todo={todo} showDate onUpdate={onUpdate} />
             ))}
-            {unscheduledTodos.length > 10 && (
-              <p className="text-xs text-gray-400 pl-2">
-                +{unscheduledTodos.length - 10}개 더...
-              </p>
-            )}
           </div>
         </div>
       )}
