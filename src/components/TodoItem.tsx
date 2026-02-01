@@ -7,10 +7,9 @@ interface TodoItemProps {
   todo: Todo;
   showDate?: boolean;
   onUpdate: () => void;
-  depth?: number;
 }
 
-export default function TodoItem({ todo, showDate = false, onUpdate, depth = 0 }: TodoItemProps) {
+export default function TodoItem({ todo, showDate = false, onUpdate }: TodoItemProps) {
   const { watchFolder, selectedFile, setSelectedFile, setFileContent } = useStore();
   const [isEditing, setIsEditing] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
