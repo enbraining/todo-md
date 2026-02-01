@@ -1,0 +1,24 @@
+[package]
+name = "todo-md"
+version = "1.0.0"
+description = "Markdown TODO Calendar"
+authors = ["you"]
+license = ""
+repository = ""
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "1.5", features = [] }
+
+[dependencies]
+tauri = { version = "1.5", features = ["dialog-open", "fs-exists", "fs-read-dir", "fs-read-file", "fs-write-file", "path-all"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+glob = "0.3"
+regex = "1.10"
+chrono = "0.4"
+dirs = "5.0"
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]
